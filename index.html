@@ -1,0 +1,453 @@
+<!DOCTYPE html><html class="light" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dr. Denner Cerqueira | Psiquiatria e Saúde Mental</title>
+<!-- Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dae2ff",
+                        "on-tertiary-fixed-variant": "#7a3000",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#10419b",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#ffa87f",
+                        "on-secondary-fixed": "#0c1a3b",
+                        "surface-container-high": "#e6e8ea",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#5f2300",
+                        "secondary-container": "#c7d3fe",
+                        "primary": "#00307e",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "surface": "#f8f9fb",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c4c6d4",
+                        "on-surface-variant": "#434652",
+                        "on-secondary-container": "#4e5b7f",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9fb",
+                        "inverse-primary": "#b2c5ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#1a47a1",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#001848",
+                        "secondary-fixed-dim": "#b9c5ef",
+                        "tertiary-container": "#833400",
+                        "secondary-fixed": "#dae2ff",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed-variant": "#394669",
+                        "outline": "#747783",
+                        "surface-dim": "#d8dadc",
+                        "surface-tint": "#325ab4",
+                        "on-tertiary-fixed": "#351000",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary": "#515d82",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-container": "#a5bcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .serif-font { font-family: 'Newsreader', serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-400 text-3xl" data-icon="medical_services" style="">medical_services</span>
+<span class="text-2xl font-serif italic text-blue-900 dark:text-blue-100" style="">Dr. Denner Cerqueira</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-900 dark:text-blue-100 font-semibold border-b-2 border-blue-900 dark:border-blue-400 transition-all" href="#" style="">Início</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#especialidades" style="">Especialidades</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#sobre" style="">Sobre</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#estrutura" style="">Estrutura</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#faq" style="">Dúvidas</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold shadow-md hover:bg-primary-container transition-all active:opacity-80" style="">
+                Agendar
+            </button>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-12">
+<div class="md:col-span-7 z-10">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-sm font-medium mb-6" style="">Psiquiatria &amp; Saúde Mental</span>
+<h1 class="text-6xl md:text-8xl leading-tight mb-8" style="">Saúde mental é <span class="italic text-primary" style="">liberdade</span>.</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-xl mb-10 leading-relaxed font-light" style="">
+                        Atendimento humanizado focado em restaurar seu equilíbrio emocional através de ciência e empatia.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all" style="">
+                            Agendar uma Consulta
+                        </button>
+<a href="https://www.instagram.com/drdennercerqueira/" target="_blank" class="bg-surface-container-lowest border border-outline-variant/30 px-10 py-4 rounded-xl text-lg font-bold hover:bg-surface-container-low transition-all inline-flex items-center gap-2">
+<i class="fab fa-instagram text-pink-500"></i> Instagram
+</a>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl relative z-10">
+<img alt="Dr. Denner Cerqueira" class="w-full h-full object-cover" src="denner.jpg" style="object-position: center top;">
+</div>
+<!-- Bio Overlap Element -->
+<div class="absolute -bottom-10 -left-10 bg-surface-container-lowest p-8 rounded-2xl shadow-xl z-20 max-w-xs border border-outline-variant/10">
+<p class="font-headline italic text-xl text-primary mb-2" style="">"O cuidado começa pela escuta atenta e sem julgamentos."</p>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-wider" style="">CRM/MG 87398</p>
+</div>
+</div>
+</div>
+<!-- Decorative background blob -->
+<div class="absolute top-0 right-0 -z-10 w-2/3 h-full bg-primary-fixed/30 rounded-bl-[20rem] blur-3xl"></div>
+</section>
+<!-- Por que escolher? -->
+<section class="py-32 bg-surface-container-low" id="sobre">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl mb-6" style="">Por que escolher o <span class="text-primary italic" style="">Dr. Denner Cerqueira?</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed" style="">
+                            Uma abordagem que une a excelência clínica acadêmica com a sensibilidade necessária para tratar as feridas invisíveis da alma.
+                        </p>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold group" href="#" style="">
+                        Ver Trajetória Completa
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward" style="">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-2xl hover:translate-y-[-8px] transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="clinical_notes" style="">clinical_notes</span>
+<h3 class="text-2xl mb-4 font-bold" style="">Diagnóstico Preciso</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Avaliação detalhada utilizando os critérios mais modernos da medicina baseada em evidências.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl hover:translate-y-[-8px] transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="diversity_3" style="">diversity_3</span>
+<h3 class="text-2xl mb-4 font-bold" style="">Tratamento Individual</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Protocolos personalizados que respeitam a sua história, seus valores e seu ritmo biológico.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl hover:translate-y-[-8px] transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="verified_user" style="">verified_user</span>
+<h3 class="text-2xl mb-4 font-bold" style="">Ética e Sigilo</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Ambiente seguro e confidencialidade absoluta em todas as etapas do seu acompanhamento.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Especialidades - Bento Grid Style -->
+<section class="py-32 px-6" id="especialidades">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl mb-4" style="">Especialidades Atendidas</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto" style="">Áreas de expertise focadas no seu bem-estar integral.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-[800px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-primary-container text-on-primary-container p-10 rounded-3xl relative overflow-hidden flex flex-col justify-end group">
+<div class="relative z-10">
+<h3 class="text-3xl font-headline italic mb-4" style="">Transtornos de Ansiedade</h3>
+<p class="text-on-primary-container/80 text-lg leading-relaxed mb-6" style="">Tratamento especializado para fobia social, síndrome do pânico e ansiedade generalizada.</p>
+<button class="bg-on-primary-container text-primary-container px-6 py-2 rounded-xl font-bold self-start" style="">Saiba mais</button>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container p-8 rounded-3xl flex items-center justify-between group overflow-hidden">
+<div>
+<h3 class="text-2xl font-bold mb-2" style="">Depressão</h3>
+<p class="text-on-surface-variant" style="">Protocolos modernos para depressão maior e persistente.</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-primary/30 group-hover:text-primary transition-colors" data-icon="sentiment_dissatisfied" style="">sentiment_dissatisfied</span>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container p-8 rounded-3xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl" data-icon="psychology" style="">psychology</span>
+<h3 class="text-xl font-bold" style="">Burnout &amp; Estresse Profissional</h3>
+</div>
+<div class="bg-surface-container-high p-8 rounded-3xl flex flex-col justify-between group">
+<h3 class="text-xl font-bold" style="">TDAH em Adultos</h3>
+<span class="material-symbols-outlined text-4xl self-end group-hover:scale-110 transition-transform" data-icon="track_changes" style="">track_changes</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Galeria -->
+<section class="py-32 px-6" id="galeria">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl mb-4" style="">Galeria</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto" style="">Conheça nosso espaço e ambiente acolhedor.</p>
+</div>
+<div class="relative overflow-hidden rounded-3xl shadow-2xl">
+<div class="carousel-container flex transition-transform duration-500" id="carousel">
+<div class="carousel-slide flex-shrink-0 w-full">
+<img alt="Recepção do consultório" class="w-full h-96 md:h-[500px] object-cover" src="galeria1.webp">
+</div>
+<div class="carousel-slide flex-shrink-0 w-full">
+<img alt="Consultório Dr. Denner Cerqueira" class="w-full h-96 md:h-[500px] object-cover" src="galeria3.jpg">
+</div>
+<div class="carousel-slide flex-shrink-0 w-full">
+<img alt="Edifício Medplex" class="w-full h-96 md:h-[500px] object-cover" src="galeria2.jpg">
+</div>
+</div>
+<button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all" onclick="prevSlide()" aria-label="Imagem anterior">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all" onclick="nextSlide()" aria-label="Próxima imagem">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+<span class="w-3 h-3 bg-white/50 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
+<span class="w-3 h-3 bg-white/50 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
+<span class="w-3 h-3 bg-white/50 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Para quem é este serviço? -->
+<section class="py-32 bg-primary text-on-primary">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<img alt="Dr. Denner Cerqueira atendendo paciente" class="rounded-[3rem] shadow-2xl w-full object-cover" src="atendimento.jpg">
+</div>
+<div class="order-1 md:order-2">
+<h2 class="text-4xl md:text-5xl mb-8 leading-tight font-headline italic" style="">Para quem busca mais do que apenas medicação.</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle" style="">check_circle</span>
+<p class="text-lg" style="">Pessoas que buscam um acolhimento empático e sem pressa.</p>
+</li>
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle" style="">check_circle</span>
+<p class="text-lg" style="">Quem deseja entender a causa de seus sintomas, não apenas silenciá-los.</p>
+</li>
+<li class="flex items-start gap-4" style="">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle" style="">check_circle</span>
+<p class="text-lg" style="">Pacientes que valorizam a integração entre psiquiatria e qualidade de vida.</p>
+</li>
+</ul>
+<button class="mt-10 bg-on-primary text-primary px-10 py-4 rounded-xl text-lg font-bold hover:bg-primary-fixed transition-all" style="">
+                        Solicitar primeira consulta
+                    </button>
+</div>
+</div>
+</section>
+<!-- Estrutura / Localização -->
+<section class="py-32 px-6" id="estrutura">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl md:text-5xl mb-4" style="">Estrutura pensada em você</h2>
+<p class="text-on-surface-variant" style="">Um ambiente acolhedor, discreto e de fácil acesso.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div class="aspect-video rounded-3xl overflow-hidden shadow-lg">
+<img alt="Consultório Dr. Denner Cerqueira" class="w-full h-full object-cover" src="consultorio2.jpg">
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="">location_on</span>
+<h3 class="text-xl font-bold" style="">Onde estamos</h3>
+</div>
+<p class="text-on-surface-variant mb-6 leading-relaxed" style="">
+                                Ouro Branco - MG
+                            </p>
+<a class="text-primary font-bold underline" href="#" style="">Abrir no Google Maps</a>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-3xl overflow-hidden min-h-[400px] relative">
+<!-- Placeholder for Map -->
+<div class="absolute inset-0 flex items-center justify-center bg-slate-200">
+<div class="text-center p-8">
+<span class="material-symbols-outlined text-6xl text-slate-400 mb-4" data-icon="map" style="">map</span>
+<p class="text-slate-500 font-medium" style="">Mapa Interativo</p>
+<p class="text-slate-400 text-sm" data-location="Ouro Branco, MG, Brazil" style="">Ouro Branco, MG</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dúvidas Frequentes -->
+<section class="py-32 bg-surface-container-low" id="faq">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="text-4xl md:text-5xl mb-12 text-center" style="">Dúvidas frequentes</h2>
+<div class="space-y-4" id="faq-list">
+<div class="faq-item bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 cursor-pointer">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg" style="">Aceita convênios médicos?</h3>
+<span class="material-symbols-outlined text-primary faq-icon" style="">add</span>
+</div>
+<p class="faq-answer hidden mt-4 text-on-surface-variant leading-relaxed" style="">O atendimento é realizado de forma particular. Entre em contato pelo Instagram para mais informações sobre valores e formas de pagamento.</p>
+</div>
+<div class="faq-item bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 cursor-pointer">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg" style="">Qual a duração da primeira consulta?</h3>
+<span class="material-symbols-outlined text-primary faq-icon" style="">add</span>
+</div>
+<p class="faq-answer hidden mt-4 text-on-surface-variant leading-relaxed" style="">A primeira consulta dura em média 60 a 90 minutos. É um tempo dedicado a conhecer profundamente sua história, sintomas e objetivos terapêuticos.</p>
+</div>
+<div class="faq-item bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 cursor-pointer">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-lg" style="">É possível realizar atendimento online?</h3>
+<span class="material-symbols-outlined text-primary faq-icon" style="">add</span>
+</div>
+<p class="faq-answer hidden mt-4 text-on-surface-variant leading-relaxed" style="">Sim, o atendimento online (telemedicina) é uma opção disponível. Entre em contato pelo Instagram para agendar sua consulta.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto bg-primary-container rounded-[4rem] p-16 md:p-24 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-5xl md:text-7xl font-headline italic text-on-primary-container mb-8" style="">Pronto para começar sua jornada?</h2>
+<p class="text-on-primary-container/80 text-xl md:text-2xl mb-12 max-w-2xl mx-auto" style="">
+                        Dê o primeiro passo em direção a uma vida com mais propósito e equilíbrio.
+                    </p>
+<a href="https://www.instagram.com/drdennercerqueira/" target="_blank" class="inline-block bg-on-primary-container text-primary-container px-12 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-transform">
+                        <i class="fab fa-instagram mr-2"></i> Fale pelo Instagram
+                    </a>
+</div>
+<!-- Artistic background decoration -->
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -left-20 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 mt-20 bg-slate-100 dark:bg-slate-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-serif text-blue-900 dark:text-blue-200 block mb-4" style="">Dr. Denner Cerqueira</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed" style="">
+                    Médico Psiquiatra com foco em saúde mental. Atendimento presencial em Ouro Branco - MG.
+                </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-blue-900 dark:text-blue-400" style="">Links Úteis</h4>
+<ul class="space-y-3">
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Especialidades</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Sobre</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Dúvidas</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Privacidade</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Contato</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-blue-900 dark:text-blue-400" style="">Contato</h4>
+<ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-center gap-2" style=""><i class="fab fa-instagram text-pink-500"></i> <a href="https://www.instagram.com/drdennercerqueira/" target="_blank" class="hover:text-blue-900 dark:hover:text-blue-100 transition-all">@drdennercerqueira</a></li>
+<li class="flex items-center gap-2" style=""><span class="material-symbols-outlined text-base" data-icon="location_on" style="">location_on</span> Ouro Branco - MG</li>
+<li class="flex items-center gap-2" style=""><span class="material-symbols-outlined text-base" data-icon="schedule" style="">schedule</span> Seg - Sex: 08h às 19h</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-blue-900 dark:text-blue-400" style="">Redes Sociais</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all" href="https://www.instagram.com/drdennercerqueira/" target="_blank" style="">
+<i class="fab fa-instagram"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-outline-variant/20 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm" style="">© 2025 Dr. Denner Cerqueira. Cuidar da mente é liberdade.</p>
+<p class="font-headline italic text-xs text-slate-400 mt-2" style="">Cuidando de mentes, transformando vidas.</p>
+</div>
+</footer>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.bottom-4 .w-3');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const carousel = document.getElementById('carousel');
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+    indicators.forEach((ind, i) => {
+        ind.classList.toggle('bg-white', i === index);
+        ind.classList.toggle('bg-white/50', i !== index);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
+// Auto-play (optional)
+setInterval(nextSlide, 5000);
+
+// FAQ Accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = !answer.classList.contains('hidden');
+        // Fecha todos
+        document.querySelectorAll('.faq-item').forEach(i => {
+            i.querySelector('.faq-answer').classList.add('hidden');
+            i.querySelector('.faq-icon').textContent = 'add';
+            i.classList.remove('bg-surface-container', 'border-primary/20');
+            i.classList.add('bg-surface-container-lowest', 'border-outline-variant/10');
+        });
+        // Abre o clicado (se estava fechado)
+        if (!isOpen) {
+            answer.classList.remove('hidden');
+            icon.textContent = 'remove';
+            item.classList.remove('bg-surface-container-lowest', 'border-outline-variant/10');
+            item.classList.add('bg-surface-container', 'border-primary/20');
+        }
+    });
+});
+</script>
+</body></html>
