@@ -89,7 +89,7 @@
         h1, h2, h3, .serif-font { font-family: 'Newsreader', serif; }
     </style>
 </head>
-<body class="bg-surface text-on-surface">
+<body class="bg-surface text-on-surface" id="top">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
@@ -97,12 +97,12 @@
 <span class="material-symbols-outlined text-blue-900 dark:text-blue-400 text-3xl" data-icon="medical_services" style="">medical_services</span>
 <span class="text-2xl font-serif italic text-blue-900 dark:text-blue-100" style="">Dr. Denner Cerqueira</span>
 </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-blue-900 dark:text-blue-100 font-semibold border-b-2 border-blue-900 dark:border-blue-400 transition-all" href="#" style="">Início</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#especialidades" style="">Especialidades</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#sobre" style="">Sobre</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#estrutura" style="">Estrutura</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" href="#faq" style="">Dúvidas</a>
+<nav class="hidden md:flex items-center gap-8" id="main-nav">
+<a class="text-blue-900 dark:text-blue-100 font-semibold border-b-2 border-blue-900 dark:border-blue-400 transition-all" data-nav-link href="#top" style="">Início</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" data-nav-link href="#especialidades" style="">Especialidades</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" data-nav-link href="#sobre" style="">Sobre</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" data-nav-link href="#estrutura" style="">Estrutura</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300" data-nav-link href="#faq" style="">Dúvidas</a>
 </nav>
 <button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold shadow-md hover:bg-primary-container transition-all active:opacity-80" style="">
                 Agendar
@@ -152,10 +152,6 @@
                             Uma abordagem que une a excelência clínica acadêmica com a sensibilidade necessária para tratar as feridas invisíveis da alma.
                         </p>
 </div>
-<a class="flex items-center gap-2 text-primary font-bold group" href="#" style="">
-                        Ver Trajetória Completa
-                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward" style="">arrow_forward</span>
-</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="bg-surface-container-lowest p-10 rounded-2xl hover:translate-y-[-8px] transition-all duration-300">
@@ -290,7 +286,7 @@
 <p class="text-on-surface-variant mb-6 leading-relaxed" style="">
                                 Ouro Branco - MG
                             </p>
-<a class="text-primary font-bold underline" href="#" style="">Abrir no Google Maps</a>
+<p class="text-primary font-bold" style="">Mapa disponível em breve</p>
 </div>
 </div>
 <div class="bg-surface-container-high rounded-3xl overflow-hidden min-h-[400px] relative">
@@ -339,11 +335,11 @@
 <section class="py-32 px-6">
 <div class="max-w-7xl mx-auto bg-primary-container rounded-[4rem] p-16 md:p-24 text-center relative overflow-hidden">
 <div class="relative z-10">
-<h2 class="text-5xl md:text-7xl font-headline italic text-on-primary-container mb-8" style="">Pronto para começar sua jornada?</h2>
-<p class="text-on-primary-container/80 text-xl md:text-2xl mb-12 max-w-2xl mx-auto" style="">
+<h2 class="text-5xl md:text-7xl font-headline italic text-white mb-8" style="">Pronto para começar sua jornada?</h2>
+<p class="text-white/90 text-xl md:text-2xl mb-12 max-w-2xl mx-auto" style="">
                         Dê o primeiro passo em direção a uma vida com mais propósito e equilíbrio.
                     </p>
-<a href="https://www.instagram.com/drdennercerqueira/" target="_blank" class="inline-block bg-on-primary-container text-primary-container px-12 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-transform">
+<a href="https://www.instagram.com/drdennercerqueira/" target="_blank" class="inline-block bg-white text-primary px-12 py-5 rounded-2xl text-xl font-black shadow-2xl hover:scale-105 transition-transform">
                         <i class="fab fa-instagram mr-2"></i> Fale pelo Instagram
                     </a>
 </div>
@@ -365,11 +361,9 @@
 <div>
 <h4 class="font-bold mb-6 text-blue-900 dark:text-blue-400" style="">Links Úteis</h4>
 <ul class="space-y-3">
-<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Especialidades</a></li>
-<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Sobre</a></li>
-<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Dúvidas</a></li>
-<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Privacidade</a></li>
-<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#" style="">Contato</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#especialidades" style="">Especialidades</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#sobre" style="">Sobre</a></li>
+<li class="" style=""><a class="text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all text-sm" href="#faq" style="">Dúvidas</a></li>
 </ul>
 </div>
 <div>
@@ -390,7 +384,7 @@
 </div>
 </div>
 <div class="max-w-7xl mx-auto pt-12 mt-12 border-t border-outline-variant/20 text-center">
-<p class="text-slate-500 dark:text-slate-400 text-sm" style="">© 2025 Dr. Denner Cerqueira. Cuidar da mente é liberdade.</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm" style="">© 2026 Dr. Denner Cerqueira. Cuidar da mente é liberdade.</p>
 <p class="font-headline italic text-xs text-slate-400 mt-2" style="">Cuidando de mentes, transformando vidas.</p>
 </div>
 </footer>
@@ -399,6 +393,46 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-slide');
 const indicators = document.querySelectorAll('.bottom-4 .w-3');
 const totalSlides = slides.length;
+const navLinks = document.querySelectorAll('[data-nav-link]');
+
+function setActiveNavLink(targetHash) {
+    navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === targetHash;
+        link.classList.toggle('text-blue-900', isActive);
+        link.classList.toggle('dark:text-blue-100', isActive);
+        link.classList.toggle('font-semibold', isActive);
+        link.classList.toggle('border-b-2', isActive);
+        link.classList.toggle('border-blue-900', isActive);
+        link.classList.toggle('dark:border-blue-400', isActive);
+        link.classList.toggle('text-slate-600', !isActive);
+        link.classList.toggle('dark:text-slate-400', !isActive);
+        link.classList.toggle('font-medium', !isActive);
+    });
+}
+
+function updateActiveNavOnScroll() {
+    const sections = [
+        { hash: '#top', top: 0 },
+        ...Array.from(navLinks)
+            .map(link => link.getAttribute('href'))
+            .filter(hash => hash && hash !== '#top')
+            .map(hash => {
+                const section = document.querySelector(hash);
+                return section ? { hash, top: Math.max(section.offsetTop - 140, 0) } : null;
+            })
+            .filter(Boolean)
+    ].sort((a, b) => a.top - b.top);
+
+    let activeHash = '#top';
+
+    sections.forEach(section => {
+        if (window.scrollY >= section.top) {
+            activeHash = section.hash;
+        }
+    });
+
+    setActiveNavLink(activeHash);
+}
 
 function showSlide(index) {
     const carousel = document.getElementById('carousel');
@@ -423,6 +457,15 @@ function goToSlide(index) {
     currentSlide = index;
     showSlide(currentSlide);
 }
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        setActiveNavLink(link.getAttribute('href'));
+    });
+});
+
+window.addEventListener('scroll', updateActiveNavOnScroll);
+window.addEventListener('load', updateActiveNavOnScroll);
 
 // Auto-play (optional)
 setInterval(nextSlide, 5000);
