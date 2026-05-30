@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Denner Cerqueira | Saúde Mental em Ouro Branco - MG</title>
-    <meta name="description" content="Cuidado em saúde mental baseado em evidências, escuta qualificada e atendimento humano na Clínica Espaço Life, em Ouro Branco - MG.">
+    <title>Atendimento em Saúde Mental em Ouro Branco/MG | Dr. Denner Cerqueira</title>
+    <meta name="description" content="Consulta médica em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências para ansiedade, alterações de humor, estresse, esgotamento, foco e rotina. Agende pelo WhatsApp.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#12263A">
 
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dr. Denner Cerqueira | Saúde Mental em Ouro Branco - MG">
-    <meta property="og:description" content="Saúde mental com ciência, precisão clínica e cuidado humano na Clínica Espaço Life.">
+    <meta property="og:title" content="Atendimento em Saúde Mental em Ouro Branco/MG | Dr. Denner Cerqueira">
+    <meta property="og:description" content="Consulta médica em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências para ansiedade, alterações de humor, estresse, esgotamento, foco e rotina.">
     <meta property="og:site_name" content="Dr. Denner Cerqueira">
     <meta property="og:image" content="images/denner.jpg">
-    <meta property="og:image:alt" content="Dr. Denner Cerqueira, médico com atuação em saúde mental.">
+    <meta property="og:image:alt" content="Dr. Denner Cerqueira, médico com atendimento em saúde mental em Ouro Branco/MG.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dr. Denner Cerqueira | Saúde Mental em Ouro Branco - MG">
-    <meta name="twitter:description" content="Cuidado em saúde mental baseado em evidências, escuta qualificada e atendimento humano.">
+    <meta name="twitter:title" content="Atendimento em Saúde Mental em Ouro Branco/MG | Dr. Denner Cerqueira">
+    <meta name="twitter:description" content="Consulta médica em saúde mental em Ouro Branco/MG, com agendamento pelo WhatsApp.">
     <meta name="twitter:image" content="images/denner.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +29,17 @@
       "@context": "https://schema.org",
       "@type": "Physician",
       "name": "Dr. Denner Cerqueira",
-      "description": "Cuidado em saúde mental baseado em evidências, escuta qualificada e atendimento humano em Ouro Branco - MG.",
+      "description": "Atendimento médico em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências, escuta qualificada e atendimento humano.",
       "identifier": "CRM/MG 87398",
       "telephone": "+55 31 98113-4796",
+      "knowsAbout": [
+        "Saúde mental",
+        "Ansiedade",
+        "Alterações de humor",
+        "Estresse",
+        "Esgotamento",
+        "Foco e rotina"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Avenida João Monlevade, 777, Loja 5, Bairro Pioneiros, Edifício Prime",
@@ -46,11 +54,11 @@
       "availableService": [
         {
           "@type": "MedicalTherapy",
-          "name": "Atendimento em saúde mental"
+          "name": "Atendimento médico em saúde mental"
         },
         {
           "@type": "MedicalTherapy",
-          "name": "Acompanhamento em saúde mental baseado em evidências"
+          "name": "Consulta médica em saúde mental"
         }
       ],
       "sameAs": [
@@ -524,6 +532,28 @@
             font-size: 0.92rem;
         }
 
+        .seo-panel {
+            background: rgba(255, 255, 255, 0.72);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 18px 50px rgba(18, 38, 58, 0.07);
+            display: grid;
+            gap: 40px;
+            grid-template-columns: minmax(0, 0.88fr) minmax(300px, 1fr);
+            padding: clamp(34px, 6vw, 64px);
+        }
+
+        .seo-panel h2 {
+            font-size: clamp(2.2rem, 4.6vw, 4.4rem);
+            letter-spacing: -0.04em;
+        }
+
+        .seo-copy {
+            color: var(--blue-steel);
+            display: grid;
+            gap: 18px;
+            font-size: 1.02rem;
+        }
+
         .care-grid {
             display: grid;
             gap: 18px;
@@ -863,6 +893,10 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
+            .seo-panel {
+                grid-template-columns: 1fr;
+            }
+
             .care-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -938,6 +972,7 @@
             .trust-strip,
             .values-grid,
             .care-grid,
+            .seo-panel,
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -1003,8 +1038,8 @@
                 </nav>
 
                 <div class="nav-actions">
-                    <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener">WhatsApp</a>
-                    <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener">Instagram</a>
+                    <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp</a>
+                    <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Instagram</a>
                 </div>
             </div>
         </div>
@@ -1016,17 +1051,17 @@
                 <div class="reveal">
                     <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Saúde Mental</span>
                     <h1>Cuidado que une <span>ciência</span> e escuta.</h1>
-                    <p class="hero-copy">Atendimento em saúde mental baseado em evidências, precisão clínica e cuidado humano na Clínica Espaço Life, em Ouro Branco.</p>
+                    <p class="hero-copy">Atendimento médico em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências para ansiedade, alterações de humor, estresse, esgotamento e dificuldades de foco e rotina. Atendimento presencial na Clínica Espaço Life, com possibilidade de consulta online.</p>
 
                     <div class="hero-actions" aria-label="Canais de contato">
-                        <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-                        <a class="btn btn-gold" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener">Ver Instagram</a>
+                        <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-gold" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
                     </div>
 
                     <div class="trust-strip" aria-label="Destaques de confiança">
                         <div class="trust-card">
                             <span class="stat-value">3.500+</span>
-                            <span>atendimentos anuais</span>
+                            <span>atendimentos realizados</span>
                         </div>
                         <div class="trust-card">
                             <span class="stat-value">CRM</span>
@@ -1041,7 +1076,7 @@
 
                 <div class="portrait-wrap reveal">
                     <div class="portrait-frame">
-                        <img src="images/denner.jpg" alt="Dr. Denner Cerqueira" width="900" height="1125">
+                        <img src="images/denner.jpg" alt="Dr. Denner Cerqueira, médico com atendimento em saúde mental em Ouro Branco/MG" width="900" height="1125">
                     </div>
                     <p class="portrait-caption">Cuidado baseado em evidências, escuta qualificada e precisão clínica.</p>
                 </div>
@@ -1083,6 +1118,21 @@
             </div>
         </section>
 
+        <section class="section">
+            <div class="container">
+                <div class="seo-panel reveal">
+                    <div>
+                        <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Ouro Branco/MG</span>
+                        <h2>Atendimento em saúde mental em Ouro Branco</h2>
+                    </div>
+                    <div class="seo-copy">
+                        <p>O Dr. Denner Cerqueira realiza atendimento médico em saúde mental em Ouro Branco/MG, com foco em escuta qualificada, avaliação clínica individualizada e condutas baseadas em evidências. O acompanhamento pode auxiliar pessoas que enfrentam sintomas de ansiedade, alterações de humor, estresse, esgotamento, dificuldades de foco, rotina e qualidade de vida.</p>
+                        <p>O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG, com possibilidade de atendimento online conforme avaliação, disponibilidade e adequação do caso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="cuidado">
             <div class="container">
                 <div class="section-header reveal">
@@ -1096,28 +1146,28 @@
                 <div class="care-grid">
                     <article class="care-card featured reveal">
                         <span class="care-number">01</span>
-                        <h3>Para quem busca mais do que uma resposta rápida.</h3>
-                        <p>O cuidado começa por uma avaliação ampla, com escuta atenta, linguagem clara e planejamento compatível com a realidade de cada pessoa.</p>
+                        <h3>Ansiedade</h3>
+                        <p>Avaliação e acompanhamento de sintomas como preocupação excessiva, crises de ansiedade, tensão, medo persistente e impacto na rotina.</p>
                     </article>
                     <article class="care-card reveal">
                         <span class="care-number">02</span>
-                        <h3>Ansiedade</h3>
-                        <p>Apoio para sintomas de preocupação excessiva, crises, medo persistente e impacto na rotina.</p>
+                        <h3>Alterações de humor</h3>
+                        <p>Acompanhamento de oscilações de humor, tristeza persistente, irritabilidade, desânimo e mudanças emocionais relevantes.</p>
                     </article>
                     <article class="care-card reveal">
                         <span class="care-number">03</span>
-                        <h3>Humor</h3>
-                        <p>Acompanhamento para períodos de desânimo, oscilação emocional, perda de energia e sofrimento recorrente.</p>
+                        <h3>Estresse e esgotamento</h3>
+                        <p>Cuidado para pessoas que enfrentam sobrecarga, cansaço intenso, pressão no trabalho, exaustão emocional e dificuldade de recuperação.</p>
                     </article>
                     <article class="care-card reveal">
                         <span class="care-number">04</span>
                         <h3>Foco e rotina</h3>
-                        <p>Avaliação de dificuldades de atenção, organização, impulsividade e funcionamento diário.</p>
+                        <p>Avaliação de dificuldades de atenção, organização, impulsividade, produtividade e funcionamento diário.</p>
                     </article>
                     <article class="care-card reveal">
                         <span class="care-number">05</span>
-                        <h3>Estresse e esgotamento</h3>
-                        <p>Cuidado para demandas intensas, sobrecarga profissional, irritabilidade e queda de desempenho.</p>
+                        <h3>Sono e qualidade de vida</h3>
+                        <p>Acompanhamento de queixas relacionadas ao sono, cansaço, hábitos de rotina e impacto da saúde mental no bem-estar.</p>
                     </article>
                 </div>
             </div>
@@ -1130,16 +1180,17 @@
                 </div>
                 <div class="bio-content reveal">
                     <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Experiência</span>
-                    <h2>Vasta experiência com cuidado em saúde mental.</h2>
-                    <p>Com mais de 3.500 atendimentos anuais, o trabalho do Dr. Denner Cerqueira combina prática clínica consistente, escuta qualificada e compromisso com decisões baseadas em evidências.</p>
+                    <h2>Experiência clínica com cuidado em saúde mental.</h2>
+                    <p>Com mais de 3.500 atendimentos realizados anualmente, o Dr. Denner Cerqueira combina prática clínica, escuta qualificada e compromisso com decisões baseadas em evidências.</p>
                     <ul class="bio-list">
-                        <li>Atendimento presencial na Clínica Espaço Life, em Ouro Branco.</li>
-                        <li>Orientação clara para que cada pessoa compreenda seu processo de cuidado.</li>
-                        <li>Postura técnica, acolhedora e responsável, sem promessas simplistas.</li>
+                        <li>Atendimento presencial na Clínica Espaço Life, em Ouro Branco/MG.</li>
+                        <li>Possibilidade de atendimento online conforme avaliação e disponibilidade.</li>
+                        <li>Condutas baseadas em evidências, com comunicação clara e acolhedora.</li>
+                        <li>Acompanhamento individualizado para saúde mental, rotina e qualidade de vida.</li>
                     </ul>
                     <div class="hero-actions">
-                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener">Ver Instagram</a>
+                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
                     </div>
                 </div>
             </div>
@@ -1152,21 +1203,21 @@
                         <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Local de atendimento</span>
                         <h2 class="section-title">Clínica Espaço Life.</h2>
                     </div>
-                    <p class="section-lead">Um local de cuidado em saúde mental com acesso claro e presença física em Ouro Branco.</p>
+                    <p class="section-lead">Um local de cuidado em saúde mental com acesso claro e presença física em Ouro Branco/MG.</p>
                 </div>
 
                 <div class="location-grid">
                     <article class="location-card reveal">
                         <h3>Onde encontrar</h3>
-                        <p class="address">Avenida João Monlevade, 777, Loja 5, Bairro Pioneiros, Edifício Prime. Ouro Branco - MG.</p>
+                        <p class="address">Avenida João Monlevade, 777, Loja 5, Bairro Pioneiros, Edifício Prime. Ouro Branco/MG.</p>
                         <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Espa%C3%A7o%20Life%20Avenida%20Jo%C3%A3o%20Monlevade%20777%20Loja%205%20Bairro%20Pioneiros%20Ouro%20Branco%20MG" target="_blank" rel="noopener">Abrir no mapa</a>
                         <div class="clinic-links">
-                            <a class="btn btn-light" href="https://www.instagram.com/espacolifeclinica/" target="_blank" rel="noopener">Instagram da clínica</a>
+                            <a class="btn btn-light" href="https://www.instagram.com/espacolifeclinica/" target="_blank" rel="noopener" aria-label="Ver Instagram da Clínica Espaço Life">Instagram da clínica</a>
                             <a class="btn btn-light" href="https://www.facebook.com/people/Cl%C3%ADnica-Espa%C3%A7o-Life/100070425010532/" target="_blank" rel="noopener">Facebook da clínica</a>
                         </div>
                     </article>
 
-                    <div class="map-card reveal" aria-label="Mapa da Clínica Espaço Life">
+                    <div class="map-card reveal" aria-label="Clínica Espaço Life em Ouro Branco/MG">
                         <iframe title="Mapa da Clínica Espaço Life" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Cl%C3%ADnica%20Espa%C3%A7o%20Life%20Avenida%20Jo%C3%A3o%20Monlevade%20777%20Loja%205%20Bairro%20Pioneiros%20Ouro%20Branco%20MG&output=embed"></iframe>
                     </div>
                 </div>
@@ -1186,24 +1237,38 @@
                 <div class="faq-grid">
                     <article class="faq-item reveal is-open">
                         <button class="faq-question" type="button" aria-expanded="true">
-                            Como faço para agendar?
+                            Como agendar uma consulta com o Dr. Denner Cerqueira?
                             <span aria-hidden="true">-</span>
                         </button>
-                        <p class="faq-answer">O agendamento é realizado diretamente pelo WhatsApp. Por esse canal, você pode verificar a disponibilidade de horários e combinar se a consulta será <strong>online</strong> ou <strong>presencial</strong>, conforme a sua necessidade.</p>
+                        <p class="faq-answer">O agendamento pode ser realizado pelo WhatsApp. A equipe orienta sobre disponibilidade de horários, modalidade de atendimento e informações iniciais para a consulta.</p>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            Onde acontece o atendimento presencial?
+                            O atendimento é presencial em Ouro Branco/MG?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">O atendimento presencial acontece na Clínica Espaço Life, na Avenida João Monlevade, 777, Loja 5, Bairro Pioneiros, Edifício Prime, em Ouro Branco - MG.</p>
+                        <p class="faq-answer">Sim. O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG.</p>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
-                            O cuidado é individualizado?
+                            O Dr. Denner realiza atendimento online?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">Sim. A avaliação considera história, sintomas, rotina, contexto de vida e objetivos de cuidado, sempre com linguagem clara e condutas responsáveis.</p>
+                        <p class="faq-answer">Sim, existe possibilidade de atendimento online, conforme disponibilidade, avaliação e adequação do caso.</p>
+                    </article>
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            O atendimento pode ajudar em casos de ansiedade, estresse e alterações de humor?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <p class="faq-answer">O acompanhamento médico em saúde mental pode auxiliar pessoas com sintomas de ansiedade, estresse, esgotamento, alterações de humor e dificuldades de rotina. A avaliação é individualizada e conduzida durante a consulta.</p>
+                    </article>
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            Como funciona o primeiro atendimento em saúde mental?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <p class="faq-answer">No primeiro atendimento, o médico realiza uma escuta cuidadosa, entende o histórico da pessoa, avalia sintomas, rotina, contexto de vida e necessidades clínicas para orientar os próximos passos do cuidado.</p>
                     </article>
                 </div>
             </div>
@@ -1214,10 +1279,10 @@
                 <div class="final-cta reveal">
                     <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Agendamento</span>
                     <h2>Saúde mental merece cuidado profissional.</h2>
-                    <p>Entre em contato pelo canal que preferir para iniciar uma conversa objetiva, acolhedora e segura.</p>
+                    <p>Agende pelo WhatsApp para receber orientações iniciais sobre disponibilidade, modalidade de atendimento e próximos passos.</p>
                     <div class="hero-actions" style="justify-content: center;">
-                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener">Ver Instagram</a>
+                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
                     </div>
                 </div>
             </div>
@@ -1229,13 +1294,13 @@
             <div class="footer-grid">
                 <div>
                     <h3>Dr. Denner Cerqueira</h3>
-                    <p>Saúde mental baseada em evidências, escuta qualificada e cuidado humano.</p>
+                    <p>CRM/MG 87398. Atendimento médico em saúde mental com cuidado baseado em evidências, escuta qualificada e comunicação acolhedora.</p>
                 </div>
                 <div>
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="https://wa.me/5531981134796" target="_blank" rel="noopener">WhatsApp: (31) 98113-4796</a></li>
-                        <li><a href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener">@dr.dennercerqueira</a></li>
+                        <li><a href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp: (31) 98113-4796</a></li>
+                        <li><a href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">@dr.dennercerqueira</a></li>
                         <li>CRM/MG 87398</li>
                     </ul>
                 </div>
@@ -1243,8 +1308,8 @@
                     <h4>Local</h4>
                     <ul>
                         <li>Clínica Espaço Life</li>
-                        <li>Avenida João Monlevade, 777, Loja 5</li>
-                        <li>Ouro Branco - MG</li>
+                        <li>Avenida João Monlevade, 777, Loja 5, Bairro Pioneiros, Edifício Prime</li>
+                        <li>Ouro Branco/MG</li>
                     </ul>
                 </div>
             </div>
