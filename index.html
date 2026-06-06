@@ -24,6 +24,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,6 +88,11 @@
             --radius-lg: 28px;
             --radius-xl: 44px;
             --max-width: 1180px;
+            --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+            --duration-fast: 220ms;
+            --duration-medium: 520ms;
+            --duration-slow: 740ms;
         }
 
         * {
@@ -107,11 +116,6 @@
             overflow-x: hidden;
         }
 
-        body.is-loaded .reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         img {
             display: block;
             max-width: 100%;
@@ -124,7 +128,12 @@
 
         a,
         button {
-            transition: transform 220ms ease, background 220ms ease, color 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+            transition:
+                transform var(--duration-fast) var(--ease-soft),
+                background var(--duration-fast) ease,
+                color var(--duration-fast) ease,
+                box-shadow var(--duration-fast) var(--ease-soft),
+                opacity var(--duration-fast) ease;
         }
 
         a:focus-visible,
@@ -159,9 +168,24 @@
         }
 
         .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        html.js .reveal {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 700ms ease, transform 700ms ease;
+            transition:
+                opacity var(--duration-slow) var(--ease-soft),
+                transform var(--duration-slow) var(--ease-soft);
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+
+        html.js .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            will-change: auto;
         }
 
         .site-header {
@@ -183,6 +207,25 @@
             gap: 28px;
             justify-content: space-between;
             padding: 12px 14px 12px 22px;
+        }
+
+        .site-header a,
+        .site-header button {
+            transition: none;
+        }
+
+        .site-header .main-nav a:hover,
+        .site-header .btn:hover,
+        .site-header .btn:active {
+            transform: none;
+        }
+
+        .site-header .btn-primary:hover {
+            box-shadow: 0 18px 34px rgba(18, 38, 58, 0.18);
+        }
+
+        .site-header .btn-light:hover {
+            box-shadow: none;
         }
 
         .identity {
@@ -253,7 +296,12 @@
         }
 
         .btn:hover {
+            box-shadow: 0 22px 42px rgba(18, 38, 58, 0.18);
             transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
         }
 
         .btn-primary {
@@ -366,7 +414,21 @@
             background: rgba(255, 255, 255, 0.66);
             border-radius: 24px;
             box-shadow: 0 18px 42px rgba(18, 38, 58, 0.07);
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-height: 116px;
             padding: 22px;
+            transition:
+                box-shadow var(--duration-fast) var(--ease-soft),
+                transform var(--duration-fast) var(--ease-soft),
+                background var(--duration-fast) ease;
+        }
+
+        .trust-card:hover {
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 22px 46px rgba(18, 38, 58, 0.1);
+            transform: translateY(-3px);
         }
 
         .stat-value {
@@ -509,6 +571,16 @@
             min-height: 245px;
             padding: 32px 24px;
             position: relative;
+            transition:
+                background var(--duration-fast) ease,
+                box-shadow var(--duration-fast) var(--ease-soft),
+                transform var(--duration-fast) var(--ease-soft);
+        }
+
+        .value-card:hover {
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 18px 38px rgba(18, 38, 58, 0.08);
+            transform: translateY(-4px);
         }
 
         .value-card::before {
@@ -517,7 +589,7 @@
             height: 12px;
             position: absolute;
             right: 26px;
-            top: 28px;
+            top: 38px;
             transform: rotate(45deg);
             width: 12px;
         }
@@ -540,6 +612,14 @@
             gap: 40px;
             grid-template-columns: minmax(0, 0.88fr) minmax(300px, 1fr);
             padding: clamp(34px, 6vw, 64px);
+            transition:
+                box-shadow var(--duration-fast) var(--ease-soft),
+                transform var(--duration-fast) var(--ease-soft);
+        }
+
+        .seo-panel:hover {
+            box-shadow: 0 24px 58px rgba(18, 38, 58, 0.1);
+            transform: translateY(-3px);
         }
 
         .seo-panel h2 {
@@ -567,6 +647,16 @@
             overflow: hidden;
             padding: 34px;
             position: relative;
+            transition:
+                background var(--duration-fast) ease,
+                box-shadow var(--duration-fast) var(--ease-soft),
+                transform var(--duration-fast) var(--ease-soft);
+        }
+
+        .care-card:hover {
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 18px 40px rgba(18, 38, 58, 0.09);
+            transform: translateY(-4px);
         }
 
         .care-card.featured {
@@ -577,6 +667,10 @@
             color: var(--white);
             grid-row: span 2;
             min-height: 500px;
+        }
+
+        .care-card.featured:hover {
+            box-shadow: 0 24px 58px rgba(18, 38, 58, 0.18);
         }
 
         .care-card.featured::before {
@@ -705,6 +799,18 @@
             background: rgba(255, 255, 255, 0.72);
             border-radius: var(--radius-lg);
             box-shadow: 0 18px 50px rgba(18, 38, 58, 0.07);
+            transition:
+                background var(--duration-fast) ease,
+                box-shadow var(--duration-fast) var(--ease-soft),
+                transform var(--duration-fast) var(--ease-soft);
+        }
+
+        .location-card:hover,
+        .map-card:hover,
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: 0 22px 52px rgba(18, 38, 58, 0.1);
+            transform: translateY(-3px);
         }
 
         .location-card {
@@ -726,6 +832,12 @@
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 24px;
+        }
+
+        .location-card .btn {
+            justify-content: center;
+            max-width: 100%;
+            width: 232px;
         }
 
         .map-card {
@@ -752,6 +864,11 @@
             padding: 26px 28px;
         }
 
+        .faq-item.is-open {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 24px 58px rgba(18, 38, 58, 0.11);
+        }
+
         .faq-question {
             align-items: center;
             background: transparent;
@@ -769,19 +886,50 @@
         }
 
         .faq-question span {
+            align-items: center;
             color: var(--gold);
+            display: inline-flex;
             font-size: 1.4rem;
+            height: 28px;
+            justify-content: center;
             line-height: 1;
+            margin-left: 18px;
+            transition: transform var(--duration-medium) var(--ease-soft);
+            width: 28px;
+        }
+
+        .faq-item.is-open .faq-question span {
+            transform: rotate(180deg);
         }
 
         .faq-answer {
             color: var(--blue-steel);
-            display: none;
+            display: grid;
+            grid-template-rows: 1fr;
             padding-top: 16px;
         }
 
-        .faq-item.is-open .faq-answer {
-            display: block;
+        html.js .faq-answer {
+            grid-template-rows: 0fr;
+            opacity: 0;
+            padding-top: 0;
+            transform: translateY(-6px);
+            transition:
+                grid-template-rows 460ms var(--ease-standard),
+                opacity 280ms ease,
+                padding-top 460ms var(--ease-standard),
+                transform var(--duration-medium) var(--ease-soft);
+        }
+
+        .faq-answer > p {
+            overflow: hidden;
+        }
+
+        html.js .faq-item.is-open .faq-answer {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            padding-top: 16px;
+            transform: translateY(0);
         }
 
         .final-cta {
@@ -948,12 +1096,14 @@
 
             .nav-actions .btn,
             .hero-actions .btn,
+            .location-card .btn,
             .clinic-links .btn {
                 flex: 1 1 100%;
+                width: 100%;
             }
 
             .hero {
-                padding: 230px 0 70px;
+                padding: 208px 0 70px;
             }
 
             .hero::before {
@@ -962,6 +1112,15 @@
 
             .hero-grid {
                 gap: 42px;
+            }
+
+            .hero-grid > .reveal:first-child {
+                order: 2;
+            }
+
+            .portrait-wrap {
+                order: 1;
+                margin-top: 14px;
             }
 
             .hero h1 {
@@ -977,6 +1136,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .value-card {
+                min-height: 204px;
+                padding: 26px 24px;
+            }
+
+            .value-card h3 {
+                margin-bottom: 14px;
+            }
+
             .care-card.featured {
                 grid-column: auto;
                 min-height: 420px;
@@ -987,7 +1155,7 @@
             }
 
             .portrait-wrap {
-                padding-top: 28px;
+                padding-top: 0;
                 padding-left: 0;
             }
 
@@ -1018,9 +1186,31 @@
                 min-height: 340px;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .faq-answer,
+            .faq-item.is-open .faq-answer {
+                transform: none;
+            }
+        }
     </style>
 </head>
-<body id="top">
+<body>
+    <span id="top" aria-hidden="true"></span>
     <header class="site-header">
         <div class="container">
             <div class="nav-shell">
@@ -1031,14 +1221,14 @@
 
                 <nav class="main-nav" aria-label="Navegação principal">
                     <a href="#sobre">Essência</a>
-                    <a href="#cuidado">Cuidado</a>
                     <a href="#experiencia">Experiência</a>
+                    <a href="#cuidado">Cuidado</a>
                     <a href="#local">Local</a>
                     <a href="#duvidas">Dúvidas</a>
                 </nav>
 
                 <div class="nav-actions">
-                    <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp</a>
+                    <a class="btn btn-primary" href="https://wa.me/5531981134796?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20atendimento%20em%20sa%C3%BAde%20mental.%20Tenho%20interesse%20em%20saber%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp</a>
                     <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Instagram</a>
                 </div>
             </div>
@@ -1051,10 +1241,10 @@
                 <div class="reveal">
                     <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Saúde Mental</span>
                     <h1>Cuidado que une <span>ciência</span> e escuta.</h1>
-                    <p class="hero-copy">Atendimento médico em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências para ansiedade, alterações de humor, estresse, esgotamento e dificuldades de foco e rotina. Atendimento presencial na Clínica Espaço Life, com possibilidade de consulta online.</p>
+                    <p class="hero-copy">Atendimento médico em saúde mental em Ouro Branco/MG, com cuidado baseado em evidências para ansiedade, alterações de humor, estresse, esgotamento e dificuldades de foco e rotina. Atendimento presencial na Clínica Espaço Life e consultas online, com mais comodidade para você.</p>
 
                     <div class="hero-actions" aria-label="Canais de contato">
-                        <a class="btn btn-primary" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-primary" href="https://wa.me/5531981134796?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20atendimento%20em%20sa%C3%BAde%20mental.%20Tenho%20interesse%20em%20saber%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
                         <a class="btn btn-gold" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
                     </div>
 
@@ -1118,6 +1308,29 @@
             </div>
         </section>
 
+        <section class="section section-dark" id="experiencia">
+            <div class="container bio-grid">
+                <div class="bio-image reveal">
+                    <img src="images/consultorio2.jpg" alt="Ambiente da Clínica Espaço Life" loading="lazy" width="900" height="1035">
+                </div>
+                <div class="bio-content reveal">
+                    <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Experiência</span>
+                    <h2>Experiência clínica com cuidado em saúde mental.</h2>
+                    <p>Com mais de 3.500 atendimentos realizados anualmente, o Dr. Denner Cerqueira combina prática clínica, escuta qualificada e compromisso com decisões baseadas em evidências.</p>
+                    <ul class="bio-list">
+                        <li>Atendimento presencial na Clínica Espaço Life, em Ouro Branco/MG.</li>
+                        <li>Consultas online com flexibilidade e conveniência.</li>
+                        <li>Condutas baseadas em evidências, com comunicação clara e acolhedora.</li>
+                        <li>Acompanhamento individualizado para saúde mental, rotina e qualidade de vida.</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a class="btn btn-gold" href="https://wa.me/5531981134796?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20atendimento%20em%20sa%C3%BAde%20mental.%20Tenho%20interesse%20em%20saber%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <div class="seo-panel reveal">
@@ -1127,7 +1340,7 @@
                     </div>
                     <div class="seo-copy">
                         <p>O Dr. Denner Cerqueira realiza atendimento médico em saúde mental em Ouro Branco/MG, com foco em escuta qualificada, avaliação clínica individualizada e condutas baseadas em evidências. O acompanhamento pode auxiliar pessoas que enfrentam sintomas de ansiedade, alterações de humor, estresse, esgotamento, dificuldades de foco, rotina e qualidade de vida.</p>
-                        <p>O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG, com possibilidade de atendimento online conforme avaliação, disponibilidade e adequação do caso.</p>
+                        <p>O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG, e também por meio de consultas online, oferecendo mais comodidade para sua rotina.</p>
                     </div>
                 </div>
             </div>
@@ -1169,29 +1382,6 @@
                         <h3>Sono e qualidade de vida</h3>
                         <p>Acompanhamento de queixas relacionadas ao sono, cansaço, hábitos de rotina e impacto da saúde mental no bem-estar.</p>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-dark" id="experiencia">
-            <div class="container bio-grid">
-                <div class="bio-image reveal">
-                    <img src="images/consultorio2.jpg" alt="Ambiente da Clínica Espaço Life" loading="lazy" width="900" height="1035">
-                </div>
-                <div class="bio-content reveal">
-                    <span class="eyebrow"><span class="diamond" aria-hidden="true"></span> Experiência</span>
-                    <h2>Experiência clínica com cuidado em saúde mental.</h2>
-                    <p>Com mais de 3.500 atendimentos realizados anualmente, o Dr. Denner Cerqueira combina prática clínica, escuta qualificada e compromisso com decisões baseadas em evidências.</p>
-                    <ul class="bio-list">
-                        <li>Atendimento presencial na Clínica Espaço Life, em Ouro Branco/MG.</li>
-                        <li>Possibilidade de atendimento online conforme avaliação e disponibilidade.</li>
-                        <li>Condutas baseadas em evidências, com comunicação clara e acolhedora.</li>
-                        <li>Acompanhamento individualizado para saúde mental, rotina e qualidade de vida.</li>
-                    </ul>
-                    <div class="hero-actions">
-                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
-                        <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1240,35 +1430,45 @@
                             Como agendar uma consulta com o Dr. Denner Cerqueira?
                             <span aria-hidden="true">-</span>
                         </button>
-                        <p class="faq-answer">O agendamento pode ser realizado pelo WhatsApp. A equipe orienta sobre disponibilidade de horários, modalidade de atendimento e informações iniciais para a consulta.</p>
+                        <div class="faq-answer">
+                            <p>O agendamento pode ser realizado pelo WhatsApp. A equipe orienta sobre disponibilidade de horários, modalidade de atendimento e informações iniciais para a consulta.</p>
+                        </div>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
                             O atendimento é presencial em Ouro Branco/MG?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">Sim. O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG.</p>
+                        <div class="faq-answer">
+                            <p>Sim. O atendimento presencial acontece na Clínica Espaço Life, em Ouro Branco/MG.</p>
+                        </div>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
                             O Dr. Denner realiza atendimento online?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">Sim, existe possibilidade de atendimento online, conforme disponibilidade, avaliação e adequação do caso.</p>
+                        <div class="faq-answer">
+                            <p>Sim. As consultas online permitem que você receba atendimento de forma prática e confortável, sem precisar se deslocar.</p>
+                        </div>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
                             O atendimento pode ajudar em casos de ansiedade, estresse e alterações de humor?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">O acompanhamento médico em saúde mental pode auxiliar pessoas com sintomas de ansiedade, estresse, esgotamento, alterações de humor e dificuldades de rotina. A avaliação é individualizada e conduzida durante a consulta.</p>
+                        <div class="faq-answer">
+                            <p>O acompanhamento médico em saúde mental pode auxiliar pessoas com sintomas de ansiedade, estresse, esgotamento, alterações de humor e dificuldades de rotina. A avaliação é individualizada e conduzida durante a consulta.</p>
+                        </div>
                     </article>
                     <article class="faq-item reveal">
                         <button class="faq-question" type="button" aria-expanded="false">
                             Como funciona o primeiro atendimento em saúde mental?
                             <span aria-hidden="true">+</span>
                         </button>
-                        <p class="faq-answer">No primeiro atendimento, o médico realiza uma escuta cuidadosa, entende o histórico da pessoa, avalia sintomas, rotina, contexto de vida e necessidades clínicas para orientar os próximos passos do cuidado.</p>
+                        <div class="faq-answer">
+                            <p>No primeiro atendimento, o médico realiza uma escuta cuidadosa, entende o histórico da pessoa, avalia sintomas, rotina, contexto de vida e necessidades clínicas para orientar os próximos passos do cuidado.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -1281,7 +1481,7 @@
                     <h2>Saúde mental merece cuidado profissional.</h2>
                     <p>Agende pelo WhatsApp para receber orientações iniciais sobre disponibilidade, modalidade de atendimento e próximos passos.</p>
                     <div class="hero-actions" style="justify-content: center;">
-                        <a class="btn btn-gold" href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
+                        <a class="btn btn-gold" href="https://wa.me/5531981134796?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20atendimento%20em%20sa%C3%BAde%20mental.%20Tenho%20interesse%20em%20saber%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">Agendar pelo WhatsApp</a>
                         <a class="btn btn-light" href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">Ver Instagram</a>
                     </div>
                 </div>
@@ -1299,7 +1499,7 @@
                 <div>
                     <h4>Contato</h4>
                     <ul>
-                        <li><a href="https://wa.me/5531981134796" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp: (31) 98113-4796</a></li>
+                        <li><a href="https://wa.me/5531981134796?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20para%20atendimento%20em%20sa%C3%BAde%20mental.%20Tenho%20interesse%20em%20saber%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp do Dr. Denner Cerqueira">WhatsApp: (31) 98113-4796</a></li>
                         <li><a href="https://www.instagram.com/dr.dennercerqueira/" target="_blank" rel="noopener" aria-label="Ver Instagram do Dr. Denner Cerqueira">@dr.dennercerqueira</a></li>
                         <li>CRM/MG 87398</li>
                     </ul>
@@ -1321,50 +1521,67 @@
 
     <script>
         const revealElements = document.querySelectorAll(".reveal");
+        const revealGroups = [
+            ".values-grid .reveal",
+            ".care-grid .reveal",
+            ".faq-grid .reveal",
+            ".location-grid .reveal",
+            ".trust-strip .trust-card"
+        ];
+
+        revealGroups.forEach((selector) => {
+            document.querySelectorAll(selector).forEach((element, index) => {
+                element.style.setProperty("--reveal-delay", `${Math.min(index * 90, 270)}ms`);
+            });
+        });
 
         if ("IntersectionObserver" in window) {
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("is-loaded");
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
+                        entry.target.classList.add("is-visible");
                         revealObserver.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+            }, { threshold: 0.12, rootMargin: "0px 0px -56px 0px" });
 
             revealElements.forEach((element) => revealObserver.observe(element));
         } else {
             revealElements.forEach((element) => {
-                element.style.opacity = "1";
-                element.style.transform = "translateY(0)";
+                element.classList.add("is-visible");
             });
         }
 
-        window.addEventListener("load", () => {
-            document.body.classList.add("is-loaded");
-        });
+        const identityLink = document.querySelector(".identity");
+        if (identityLink) {
+            identityLink.addEventListener("click", (event) => {
+                event.preventDefault();
+                history.pushState(null, "", "#top");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
 
         document.querySelectorAll(".faq-item").forEach((item) => {
             const button = item.querySelector(".faq-question");
-            const icon = button.querySelector("span");
+
+            const setFaqState = (targetItem, shouldOpen) => {
+                const targetButton = targetItem.querySelector(".faq-question");
+                const targetIcon = targetButton.querySelector("span");
+
+                targetItem.classList.toggle("is-open", shouldOpen);
+                targetButton.setAttribute("aria-expanded", String(shouldOpen));
+                targetIcon.textContent = shouldOpen ? "-" : "+";
+            };
 
             button.addEventListener("click", () => {
                 const isOpen = item.classList.contains("is-open");
 
                 document.querySelectorAll(".faq-item").forEach((otherItem) => {
-                    const otherButton = otherItem.querySelector(".faq-question");
-                    const otherIcon = otherButton.querySelector("span");
-                    otherItem.classList.remove("is-open");
-                    otherButton.setAttribute("aria-expanded", "false");
-                    otherIcon.textContent = "+";
+                    setFaqState(otherItem, false);
                 });
 
                 if (!isOpen) {
-                    item.classList.add("is-open");
-                    button.setAttribute("aria-expanded", "true");
-                    icon.textContent = "-";
+                    setFaqState(item, true);
                 }
             });
         });
